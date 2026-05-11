@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Web</title>
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-[#1f0f10]">
+    <!-- wrapper -->
+    <div id="app" class="container min-h-screen max-w-1200 mx-auto px-4">
+      <!-- top section -->
+      <header>
+        <section class= "top-section  text-white p-4 flex justify-between items-center">
+          <!--left navbar -->
+          <nav class="main-nav items-center flex justify-center">
+            <a href="#">
+              <img src="src/assets/screen.png" alt="Logo" class="w-24 h-24 object-contain">
+            </a>
+            <ul class="flex space-x-4 justify-between">
+              <li><a href="#" class="hover:text-black">Home</a></li>
+              <li><a href="#" class="hover:text-black">Trending</a></li>
+              <li><a href="#" class="hover:text-black">Library</a></li>
+            </ul>
+          </nav>  
+          <!-- right navbar -->
+          <nav class="flex items-center">
+            <div class="search-bar">
+              <input type="text" placeholder="Search..." class="w-40 p-2 rounded bg-[#000000] border border-gray-300 text-white">
+            </div>
+            <button class="relative p-2 rounded-full hover:bg-white/10">
+              <i class="fa-solid fa-bell text-white/80 text-lg"></i>
+              <span class="absolute top-1 right-0 w-1 h-1 bg-red-500 rounded-full"></span>
+            </button>
+            <button>
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </nav>
+        </section>
+      </header>
+      
+      <!-- main content -->
+      <main>
+        <div class="hero section text-white p-4">
+          <p>FEATURED STORY</p>
+
+          <h1>Discover your next favorite story</h1>
+
+          <p>From heart - pounding action to soul-stirring dramas, imerse yourself in the world of storytelling. </p>
+
+          <div>
+            <button type="button" class="bg-orange-700 hover:bg-orange-800 text-white rounded-lg px-4 py-2 m-2">
+              Watch Now
+            </button>
+            <button type="button" class="bg-gray-700 hover:bg-gray-800 text-white rounded-lg opacity-70 px-4 py-2 m-2">
+              + Watchlist
+            </button>
+          </div>
+        </div>
+        
+        <!--Category Section-->
+        <!---Movie list--->
+        <div class="movie-list text-white p-4">
+          <!--title-->
+          <div class="flex justify-between gap-4">
+            <h2 class="text-2xl font-bold mx-4">Popular Movies</h2>
+            <a href="#" class="mx-4">View All</a>
+          </div>
+          <!--movie type-->
+          <div>
+            <ul class="flex flex-wrap gap-4 mb-4">
+              <li><a href="">All Movies</a></li>
+              <li><a href="">Action</a></li>
+              <li><a href="">Drama</a></li>
+              <li><a href="">Comedy</a></li>
+            </ul>
+          </div>
+          <!--Movie grid-->
+          <div class="movie-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Movie Item -->
+             <!--item1-->
+            <article class=" overflow-hidden rounded-xl bg-amber-950"> 
+              <div class="relative">
+                <img src="src/assets/download.jpg" alt="Movie Poster" class="w-full h-auto object-cover rounded-t-lg">
+                
+                <span class="absolute top-2 right-2 bg-red-600">
+                  IMDb 8.5
+                </span>
+              </div>
+              <!------- Movie Information ----->
+              <div class="movie-info p-3">
+                <div class="flex justify-between items-center gap-2">
+                  <h3 class="truncate">Name</h3>
+                  <span class="shrink-0">2023</span>
+                </div>
+
+                <div class="mt-2 flex gap-2 flex-wrap">
+                  <span class="bg-amber-700 px-2 py-2 rounded">Action</span>
+                  <span class="bg-amber-700 px-2 py-2 rounded">Adventure</span>
+                </div>
+              </div>
+            </article>
+            <!---item2-->
+            <div class="h-100 rounded-xl bg-white/10"></div>
+            <div class="h-100 rounded-xl bg-white/10"></div>
+            <div class="h-100 rounded-xl bg-white/10"></div>
+            <div class="h-100 rounded-xl bg-white/10"></div>
+          </div>
+        </div>
+      </main>
+     
+      <footer class="bg-[#000000] mt-8 ">
+        <div class="text-white p-4 text-center">
+          <p>&copy; 2023 Movie Web. All rights reserved.</p>
+        </div>
+      </footer>
+   
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
