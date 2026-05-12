@@ -1,50 +1,30 @@
-# Movie Web Project
+# MovieLab
 
-## Mục tiêu
-Làm web tìm kiếm phim bằng API, hiển thị danh sách phim, xem chi tiết phim.
+MovieLab is a movie search web app built with HTML, Tailwind CSS and JavaScript.
 
-## Tech stack
+## Features
+
+- Popular movie list
+- Movie search
+- Movie detail
+- Loading state
+- Empty state
+- Error state
+- Responsive layout
+
+## Tech Stack
+
 - HTML
-- CSS
+- Tailwind CSS
 - JavaScript
-- TailWind
-- Movie API
+- TMDB API
 
-## Phase 1: UI tĩnh
-- [ ] Set background tối
-- [ ] Import font Inter/Geist
-- [ ] Navbar + search bar
-- [ ] Section title
-- [ ] Movie grid
-- [ ] 1 movie card tĩnh
-- [ ] Button style
-- [ ] Badge rating
+## Project Structure
 
-## Phase 2: Render fake data
-- [ ] Tạo fakeMovies
-- [ ] Viết renderMovies()
-- [ ] Card dùng đúng style từ design
-- [ ] Grid responsive
-
-## Phase 3: API
-- [ ] Fetch popular movies
-- [ ] Map poster_path sang image URL
-- [ ] Render data thật
-
-## Phase 4: Search
-- [ ] Submit form
-- [ ] Gọi search API
-- [ ] Render kết quả
-- [ ] Empty state
-
-## Phase 5: Detail
-- [ ] Click card/button
-- [ ] Lấy movie id
-- [ ] Fetch detail
-- [ ] Hiện modal
-
-## Phase 6: Polish
-- [ ] Loading state
-- [ ] Error state
-- [ ] Fallback poster
-- [ ] Deploy
+```txt
+movielab/
+├── index.html
+├── app.js
+├── DESIGN_NOTES.md
+├── PROJECT_PLAN.md
+└── README.md

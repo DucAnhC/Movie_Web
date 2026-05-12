@@ -8,29 +8,31 @@
       rel="stylesheet" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
 
   <body class="bg-[#1f0f10]">
     <!-- wrapper -->
-    <div id="app" class="container min-h-screen max-w-1200 mx-auto px-4">
+    <div id="app" class="container min-h-screen max-w-300 mx-auto px-4">
       <!-- top section -->
       <header>
-        <section class= "top-section  text-white p-4 flex justify-between items-center">
+        <section class= "top-section  text-white p-4 flex items-center justify-between">
           <!--left navbar -->
-          <nav class="main-nav items-center flex justify-center">
+          <nav class="main-nav items-center flex gap-8">
             <a href="#">
-              <img src="src/assets/screen.png" alt="Logo" class="w-24 h-24 object-contain">
+              <img src="src/assets/screen.png" alt="Logo" class="w-20 h-20 object-contain">
             </a>
-            <ul class="flex space-x-4 justify-between">
-              <li><a href="#" class="hover:text-black">Home</a></li>
-              <li><a href="#" class="hover:text-black">Trending</a></li>
-              <li><a href="#" class="hover:text-black">Library</a></li>
+            <ul class="flex gap-6 p-4 ">
+              <li><a href="#" class="hover:text-black ">Home</a></li>
+              <li><a href="#" class="hover:text-black ">Trending</a></li>
+              <li><a href="#" class="hover:text-black ">Library</a></li>
             </ul>
           </nav>  
           <!-- right navbar -->
-          <nav class="flex items-center">
-            <div class="search-bar">
-              <input type="text" placeholder="Search..." class="w-40 p-2 rounded bg-[#000000] border border-gray-300 text-white">
+          <nav class="flex gap-6 py-4">
+            <div class="search-bar relative flex justify-start items-center gap-2">
+              <i class="fa-solid fa-magnifying-glass absolute left-3"></i>
+              <input type="text" placeholder="Search" class="w-150 p-2 rounded-full bg-[#130608] border border-[#3F3F46] text-white pl-10 focus:placeholder-transparent">
             </div>
             <button class="relative p-2 rounded-full hover:bg-white/10">
               <i class="fa-solid fa-bell text-white/80 text-lg"></i>
@@ -44,20 +46,23 @@
       </header>
       
       <!-- main content -->
-      <main>
-        <div class="hero section text-white p-4">
-          <p>FEATURED STORY</p>
+      <main class="main-content rounded-lg">
+        <div class="hero section bg-[url('/src/assets/background.jpg')] bg-cover bg-center text-white p-4 ">
+          <span class="bg-[#E11D48] inline-block rounded-full tracking-wide px-3 py-1 font-bold text-xs mb-6 mt-20">
+            FEATURE STORY
+          </span>
+          
+          
+          <h1 class="text-4xl font-bold text-[#FAFAFA] mb-6">Discover your next favorite story</h1>
 
-          <h1>Discover your next favorite story</h1>
+          <p class="text-sm max-w-lg text-[#D4D4D8]/60 leading-relaxed mb-6">From heart - pounding action to soul-stirring dramas, im erse yourself in the world of storytelling. </p>
 
-          <p>From heart - pounding action to soul-stirring dramas, imerse yourself in the world of storytelling. </p>
-
-          <div>
-            <button type="button" class="bg-orange-700 hover:bg-orange-800 text-white rounded-lg px-4 py-2 m-2">
+          <div class="flex gap-4">
+            <button type="button" class="bg-orange-700 hover:bg-orange-800 text-white rounded-md px-4 py-2 ">
               Watch Now
             </button>
-            <button type="button" class="bg-gray-700 hover:bg-gray-800 text-white rounded-lg opacity-70 px-4 py-2 m-2">
-              + Watchlist
+            <button type="button" class="bg-gray-700 hover:bg-gray-800 text-white rounded-md opacity-70 px-4 py-2 ">
+              + WatchList
             </button>
           </div>
         </div>
@@ -66,28 +71,28 @@
         <!---Movie list--->
         <div class="movie-list text-white p-4">
           <!--title-->
-          <div class="flex justify-between gap-4">
-            <h2 class="text-2xl font-bold mx-4">Popular Movies</h2>
-            <a href="#" class="mx-4">View All</a>
+          <div class="flex justify-between gap-4 mb-6">
+            <h2 class="text-2xl font-bold  text-[#FAFAFA]">Popular Movies</h2>
+            <a href="#" class=" text-[#FFB3B6]">View All</a>
           </div>
           <!--movie type-->
           <div>
             <ul class="flex flex-wrap gap-4 mb-4">
-              <li><a href="">All Movies</a></li>
-              <li><a href="">Action</a></li>
-              <li><a href="">Drama</a></li>
-              <li><a href="">Comedy</a></li>
+              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">All Movies</a></li>
+              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">Action</a></li>
+              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">Drama</a></li>
+              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">Comedy</a></li>
             </ul>
           </div>
           <!--Movie grid-->
-          <div class="movie-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div id="movieGrid" class="movie-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             <!-- Movie Item -->
              <!--item1-->
             <article class=" overflow-hidden rounded-xl bg-amber-950"> 
               <div class="relative">
-                <img src="src/assets/download.jpg" alt="Movie Poster" class="w-full h-auto object-cover rounded-t-lg">
+                <img src="src/assets/download.jpg" alt="Movie Poster" class="w-full aspect-2/3 object-cover rounded-t-lg">
                 
-                <span class="absolute top-2 right-2 bg-red-600">
+                <span class="absolute top-2 right-2 bg-red-600 rounded-full">
                   IMDb 8.5
                 </span>
               </div>
@@ -99,8 +104,8 @@
                 </div>
 
                 <div class="mt-2 flex gap-2 flex-wrap">
-                  <span class="bg-amber-700 px-2 py-2 rounded">Action</span>
-                  <span class="bg-amber-700 px-2 py-2 rounded">Adventure</span>
+                  <span class="bg-amber-700 px-2 py-1 rounded">Action</span>
+                  <span class="bg-amber-700 px-2 py-1 rounded">Adventure</span>
                 </div>
               </div>
             </article>
