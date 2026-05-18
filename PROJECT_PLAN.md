@@ -202,7 +202,7 @@ Estimate:
 1 ngày
 
 Status:
-Todo
+Done
 
 ### Phase 5 - Movie Detail
 
@@ -222,7 +222,7 @@ Estimate:
 1 - 2 ngày
 
 Status:
-Todo
+Done
 
 ### Phase 6 - UX States
 

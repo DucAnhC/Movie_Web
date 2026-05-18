@@ -8,123 +8,209 @@
       rel="stylesheet" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/style.css" />
   </head>
 
-  <body class="bg-[#1f0f10]">
+  <body class="bg-linear-to-b from-[#1f0f10] to-[#1f0f10]/95 text-[#FAFAFA] overflow-x-hidden">
     <!-- wrapper -->
-    <div id="app" class="container min-h-screen max-w-300 mx-auto px-4">
+    <div id="app" class="min-h-screen w-full max-w-7xl mx-auto bg-[#1f0f10]">
       <!-- top section -->
-      <header>
-        <section class= "top-section  text-white p-4 flex items-center justify-between">
+      <header class="sticky top-0 z-50 h-16 w-full bg-[#18181B]/40 backdrop-blur-xl border-b border-[#27272A] shadow-xl/20">
+        <section class="top-section h-full px-8 text-[#A1A1AA] flex items-center justify-between gap-6">
           <!--left navbar -->
-          <nav class="main-nav items-center flex gap-8">
-            <a href="#">
-              <img src="src/assets/screen.png" alt="Logo" class="w-20 h-20 object-contain">
+          <nav class="main-nav h-full items-center flex gap-4">
+            <a href="index.html">
+              <p class=" w-auto text-3xl font-bold text-[#E11D48]">MovieLab</p>
             </a>
-            <ul class="flex gap-6 p-4 ">
-              <li><a href="#" class="hover:text-black ">Home</a></li>
-              <li><a href="#" class="hover:text-black ">Trending</a></li>
-              <li><a href="#" class="hover:text-black ">Library</a></li>
+            <ul class="flex items-center gap-6 p-0">
+              <li><a href="#" id="homeLink" class="relative inline-flex items-center pb-1 border-b-2 border-transparent text-[#E5BDBE] hover:text-[#FFB3B6] transition">Home</a></li>
+              <li><a href="#" id="trendingLink" class="relative inline-flex items-center pb-1 border-b-2 border-transparent text-[#E5BDBE] hover:text-[#FFB3B6] transition">Trending</a></li>
+              <li><a href="#" id="libraryLink" class="relative inline-flex items-center pb-1 border-b-2 border-transparent text-[#E5BDBE] hover:text-[#FFB3B6] transition">Library</a></li>
             </ul>
           </nav>  
-          <!-- right navbar -->
-          <nav class="flex gap-6 py-4">
-            <div class="search-bar relative flex justify-start items-center gap-2">
-              <i class="fa-solid fa-magnifying-glass absolute left-3"></i>
-              <input type="text" placeholder="Search" class="w-150 p-2 rounded-full bg-[#130608] border border-[#3F3F46] text-white pl-10 focus:placeholder-transparent">
-            </div>
-            <button class="relative p-2 rounded-full hover:bg-white/10">
-              <i class="fa-solid fa-bell text-white/80 text-lg"></i>
-              <span class="absolute top-1 right-0 w-1 h-1 bg-red-500 rounded-full"></span>
+          <!-- right navbar --> 
+          <nav class="flex items-center gap-4">
+            <form id="searchForm" class="search-bar relative flex items-center">
+              <i class="fa-solid fa-magnifying-glass absolute left-4 text-[#FFB3B6]"></i>
+              <input id="searchInput" type="text" placeholder="Search movies, actors, directors..." class="h-10 w-xl max-w-[42vw] p-2 outline-none rounded-full bg-[#09090B] text-[#FAFAFA] placeholder:text-[#71717A] border border-[#27272A] pl-10 focus:border-[#E11D48] focus:ring-2 focus:ring-[#E11D48]/35 focus:placeholder-transparent">
+            </form>
+            <button class="relative p-2 rounded-full hover:bg-[#27272A] cursor-pointer">
+              <i class="fa-solid fa-bell text-[#A1A1AA] text-lg"></i>
+              <span class="absolute top-1 right-0 w-1 h-1 bg-[#E11D48] rounded-full"></span>
             </button>
-            <button>
+            <button class="cursor-pointer p-2 rounded-full hover:bg-[#27272A]">
               <i class="fa-regular fa-user"></i>
             </button>
           </nav>
         </section>
+        
       </header>
       
       <!-- main content -->
-      <main class="main-content rounded-lg">
-        <div class="hero section bg-[url('/src/assets/background.jpg')] bg-cover bg-center text-white p-4 ">
-          <span class="bg-[#E11D48] inline-block rounded-full tracking-wide px-3 py-1 font-bold text-xs mb-6 mt-20">
+      <main class="main-content rounded-lg pt-6 text-[#FAFAFA]">
+        <div id="heroSection" class="hero-section relative  bg-[url('/src/assets/background.jpg')] bg-cover bg-center max-w-308 mx-auto h-130 md:h-153 lg:h-179 w-full text-white p-4">
+          <div class="absolute inset-0 bg-linear-to-b from-transparent via-[#1f0f10]/50 to-[#1f0f10]"></div>
+          <div class=" absolute flex flex-col gap-4 z-15 py-12 px-12 bottom-0">
+            <span class="bg-[#E11D48] w-fit rounded-full tracking-wide px-3 py-2 font-bold text-xs">
             FEATURE STORY
-          </span>
+            </span>
           
           
-          <h1 class="text-4xl font-bold text-[#FAFAFA] mb-6">Discover your next favorite story</h1>
+            <h1 class="text-[48px] font-bold text-[#FBDBDB] ">Discover your next favorite story</h1>
 
-          <p class="text-sm max-w-lg text-[#D4D4D8]/60 leading-relaxed mb-6">From heart - pounding action to soul-stirring dramas, im erse yourself in the world of storytelling. </p>
+            <p class="text-[16px] max-w-lg text-[#E5BDBE] leading-relaxed ">From heart-pounding action to soul-stirring dramas, immerse yourself in a curated selection of films. Experience movies as they were meant to be seen.</p>
 
-          <div class="flex gap-4">
-            <button type="button" class="bg-orange-700 hover:bg-orange-800 text-white rounded-md px-4 py-2 ">
-              Watch Now
-            </button>
-            <button type="button" class="bg-gray-700 hover:bg-gray-800 text-white rounded-md opacity-70 px-4 py-2 ">
-              + WatchList
-            </button>
+            <div class="flex gap-4">
+              <button type="button" class="bg-[#E11D48] hover:bg-[#BE123C] text-white text-[18px] font-medium rounded-lg px-8 py-3">
+                Watch Now
+              </button>
+              <button type="button" id="browseBtn" class="js-add-to-watchlist bg-[#443030]/40 hover:bg-[#3F3F46] text-[#FAFAFA] text-[18px] font-medium border border-[#5C3F40]/30 rounded-lg px-8 py-3">
+                Browse Movies
+              </button>
+            </div>
           </div>
+          
         </div>
         
         <!--Category Section-->
         <!---Movie list--->
-        <div class="movie-list text-white p-4">
+        <div id="movieListSection" class="movie-list text-white px-6">
           <!--title-->
-          <div class="flex justify-between gap-4 mb-6">
-            <h2 class="text-2xl font-bold  text-[#FAFAFA]">Popular Movies</h2>
-            <a href="#" class=" text-[#FFB3B6]">View All</a>
+          <div class=" pt-12 pb-12 ">
+            <div class="flex justify-between items-center gap-4 mb-6">
+              <h2 id="movieSectionTile" class="inline-flex items-center gap-2 text-3xl font-bold text-[#FAFAFA] before:inline-block before:h-5 before:w-[3px] before:rounded-full before:bg-[#E11D48] before:content-['']">Popular Movies</h2>
+              <a href="#" id="viewAllLink" class=" text-[#FFB3B6] text-[12px] hover:text-[#FAFAFA]">VIEW ALL</a>
+            </div>
+            <div id="genreFilter">
+              <ul class="flex flex-wrap gap-3">
+                <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><button>All Movies</button></li>
+                <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><button>Action</button></li>
+                <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><button>Drama</button></li>
+                <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><button>Comedy</button></li>
+              </ul>
+          </div>
           </div>
           <!--movie type-->
-          <div>
-            <ul class="flex flex-wrap gap-4 mb-4">
-              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">All Movies</a></li>
-              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">Action</a></li>
-              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">Drama</a></li>
-              <li class="bg-[#27272A] text-[#A1A1AA] hover:bg-[#E11D48] hover:text-white rounded-full tracking-wide inline-block py-2 px-4"><a href="">Comedy</a></li>
-            </ul>
-          </div>
+          
           <!--Movie grid-->
-          <div id="movieGrid" class="movie-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div id="movieGrid" class="movie-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <!-- Movie Item -->
              <!--item1-->
-            <article class=" overflow-hidden rounded-xl bg-amber-950"> 
+            <article class="movie-card overflow-hidden rounded-lg border border-[#27272A] bg-[#18181B] transition duration-300 hover:border-[#3F3F46] hover:scale-[1.03]" data-movie-id="1"> 
               <div class="relative">
                 <img src="src/assets/download.jpg" alt="Movie Poster" class="w-full aspect-2/3 object-cover rounded-t-lg">
                 
-                <span class="absolute top-2 right-2 bg-red-600 rounded-full">
+                <span class="absolute top-2 right-2 bg-[#E11D48] text-white rounded-md">
                   IMDb 8.5
                 </span>
               </div>
               <!------- Movie Information ----->
               <div class="movie-info p-3">
                 <div class="flex justify-between items-center gap-2">
-                  <h3 class="truncate">Name</h3>
-                  <span class="shrink-0">2023</span>
+                  <h3 class="truncate text-[#FAFAFA]">Name</h3>
+                  <span class="shrink-0 text-[#A1A1AA]">2023</span>
                 </div>
 
                 <div class="mt-2 flex gap-2 flex-wrap">
-                  <span class="bg-amber-700 px-2 py-1 rounded">Action</span>
-                  <span class="bg-amber-700 px-2 py-1 rounded">Adventure</span>
+                  <span class="px-2 py-1 rounded text-xs text-[#A1A1AA] bg-[#27272A]">Action</span>
+                  <span class="px-2 py-1 rounded text-xs text-[#A1A1AA] bg-[#27272A]">Adventure</span>
                 </div>
               </div>
             </article>
             <!---item2-->
-            <div class="h-100 rounded-xl bg-white/10"></div>
-            <div class="h-100 rounded-xl bg-white/10"></div>
-            <div class="h-100 rounded-xl bg-white/10"></div>
-            <div class="h-100 rounded-xl bg-white/10"></div>
+            <article class="overflow-hidden rounded-lg border border-[#27272A] bg-[#18181B] animate-pulse">
+              <div class="aspect-2/3 bg-[#27272A]"></div>
+              <div class="p-3">
+                <div class="h-5 w-3/4 rounded bg-[#27272A]"></div>
+                <div class="mt-2 h-4 w-1/2 rounded bg-[#27272A]"></div>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-lg border border-[#27272A] bg-[#18181B] animate-pulse">
+              <div class="aspect-2/3 bg-[#27272A]"></div>
+              <div class="p-3">
+                <div class="h-5 w-3/4 rounded bg-[#27272A]"></div>
+                <div class="mt-2 h-4 w-1/2 rounded bg-[#27272A]"></div>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-lg border border-[#27272A] bg-[#18181B] animate-pulse">
+              <div class="aspect-2/3 bg-[#27272A]"></div>
+              <div class="p-3">
+                <div class="h-5 w-3/4 rounded bg-[#27272A]"></div>
+                <div class="mt-2 h-4 w-1/2 rounded bg-[#27272A]"></div>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-lg border border-[#27272A] bg-[#18181B] animate-pulse">
+              <div class="aspect-2/3 bg-[#27272A]"></div>
+              <div class="p-3">
+                <div class="h-5 w-3/4 rounded bg-[#27272A]"></div>
+                <div class="mt-2 h-4 w-1/2 rounded bg-[#27272A]"></div>
+              </div>
+            </article>
           </div>
         </div>
       </main>
-     
-      <footer class="bg-[#000000] mt-8 ">
-        <div class="text-white p-4 text-center">
-          <p>&copy; 2023 Movie Web. All rights reserved.</p>
+      <!--movie detail-->
+      <div id="movieDetailModal" class="movie-detail hidden fixed inset-0 z-50 p-4 gap-6 flex items-center justify-center text-[#FAFAFA] bg-black/60 backdrop-blur-sm">
+        
+      </div>
+      <!--load more button-->
+      <div class="loadMore items-center justify-center flex py-16">
+        <button 
+          id="loadMoreBtn"
+          class="bg-[#2c1b1c] px-[48px] py-[16px] items-center justify-center rounded-lg text-sm font-medium text-[#FBDBDB] hover:bg-[#E11D48]">
+        Load More Movies
+        <i class="fa-solid fa-angle-down m-0.5"></i>
+        </button>
+      </div>
+      <footer>  
+        <div class="flex flex-col gap-8 px-8 py-16 text-[#A1A1AA] bg-[#190A0B]">
+          <div class="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-8">
+            <div class="flex flex-col justify-start items-start gap-4 pl-6">
+              <h2 class="w-auto text-3xl font-bold text-[#E11D48]">MovieLab</h2>
+              <p class="text-[#E5BDBE] text-wrap max-w-[384px]">We are a movie database website that provides information about the latest movies and TV shows.</p>
+              <div class="flex gap-4 text-[#E5BDBE]">
+                <button type="button"><i class="fa-solid fa-earth-africa bg-[#382526] p-2 rounded-full text-2xl cursor-pointer"></i></button>
+                <button type="button"><i class="fa-regular fa-envelope bg-[#382526] p-2 rounded-full text-2xl cursor-pointer"></i></button>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+              <div class="flex flex-col justify-start ">
+                <h3 class="text-2xl text-[#FBDBDB] pb-6">Explore</h3>
+                <ul class="flex flex-col gap-4">
+                  <li><a href="" class="text-[#E5BDBE]">Popular</a></li>
+                  <li><a href="" class="text-[#E5BDBE]">Coming Soon</a></li>
+                  <li><a href="" class="text-[#E5BDBE]">Awards</a></li>
+                  <li><a href="" class="text-[#E5BDBE]">Interviews</a></li>
+                </ul>
+              </div>
+              <div class="flex flex-col justify-start">
+                <h3 class="text-2xl text-[#FBDBDB] pb-6 ">Support</h3>
+                <ul class="flex flex-col gap-4">
+                  <li><a href="" class="text-[#E5BDBE]">Help Center</a></li>
+                  <li><a href="" class="text-[#E5BDBE]">Terms of Service</a></li>
+                  <li><a href="" class="text-[#E5BDBE]">Privacy Policy</a></li>
+                  <li><a href="" class="text-[#E5BDBE]">Cookie Settings</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="items-center justify-center flex pt-16">
+            <p class="text-[#E5BDBE]/40">© 2024 MovieLab Cinematic Discovery. All rights reserved.</p>
+          </div>
         </div>
       </footer>
-   
+      
     </div>
+     
+      
+   
+    
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
